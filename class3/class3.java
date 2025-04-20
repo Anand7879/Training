@@ -6,12 +6,11 @@ public class class3 {
 //pattern2(5);
 //    pattern3(6);
 //    pattern4(6);
-//pattern5(3);
 // pattern5(5);
 //    pattern6(6);
-    pattern7(6);
+//    pattern7(50);
+        pattern8(5);
     }
-
     public static void pattern1(int n){
         for(int i = 0; i<n; i++)
         {
@@ -76,13 +75,25 @@ public class class3 {
     }
 
     public static void pattern6(int n){
+        System.out.println();
         for(int i = 1; i<=n; i++)
         {
-            for(int j = 0; j<i; j++)
+           for(int j = i; j<n; j++)
+           {
+               System.out.print("*");
+           }
+            System.out.println();
+        }
+    }
+
+    public static void pattern7(int n){
+        for(int i = 0; i<=(n/2); i++)
+        {
+            for(int j = i; j<n/2; j++)
             {
-                System.out.print("*");
+                System.out.print(" ");
             }
-            for(int j=0; j<(2*i-1); j++)
+            for(int j=0; j<=2*i+1; j++)
             {
                 System.out.print("*");
             }
@@ -90,19 +101,20 @@ public class class3 {
         }
     }
 
-    public static void pattern7(int n){
-        for(int i = 1; i<=n; i++)
-        {
-            for(int j = n; j<i; j--)
-            {
-                System.out.print(" ");
-            }
-            for(int j=(2*i-1); j<0; j--)
-            {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
+    public static void pattern8(int n){
+              for(int i=0; i<=(n/2); i++)
+              {
+
+                  for(int j = 0; j<i; j++)
+                  {
+                      System.out.print("_");
+                  }
+                  for(int k=0; k<2*(n/2-i)+1; k++)
+                  {
+                      System.out.print("*");
+                  }
+                  System.out.println();
+              }
     }
 }
 
