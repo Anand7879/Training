@@ -9,7 +9,8 @@ public class class3 {
 // pattern5(5);
 //    pattern6(6);
 //    pattern7(50);
-        pattern8(5);
+        // pattern8(5);
+        // pattern9(5);
     }
     public static void pattern1(int n){
         for(int i = 0; i<n; i++)
@@ -116,6 +117,19 @@ public class class3 {
                   System.out.println();
               }
     }
+
+    public static void pattern9(int n)
+    {
+        for(int i = 0; i<=n; i++)
+        {
+           for(int j = 1; j<=n-i; j++)
+           {
+            System.out.print(j);
+           }
+           System.out.println();
+        }
+    }
 }
+
 
 
