@@ -4,8 +4,15 @@ public class class6 {
     public static void main(String[] args) {
 //        countElements();
 //convert1DArray();
-    matrix_multiplication();
+    // matrix_multiplication();
+
+    String str = "Hello";
+    System.out.println(str.length());
+    System.out.println(str.charAt(1));
+
     }
+
+
     public static void countElements()
     {
         int [][]  arr = {{1,2,3,4},{3,4,5,6},{4,5,6,7}};
@@ -82,5 +89,6 @@ public class class6 {
         }
     }
 
+    
 
 }
