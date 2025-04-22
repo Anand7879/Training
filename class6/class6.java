@@ -5,9 +5,10 @@ public class class6 {
 //        countElements();
 //convert1DArray();
     // matrix_multiplication();
-    SamestringCount();
-    palindromeCheckar("racecar");
-    frequencyCheck();
+    // SamestringCount();
+    // palindromeCheckar("racecar");
+    // frequencyCheck();
+    VowelsCheck();
 
     // String str = "Hello";
     // System.out.println(str.length());
@@ -148,7 +149,7 @@ public class class6 {
 
    public static void frequencyCheck()
    {
-      String str ="rececar";
+      String str ="rrrrr";
       char target = 'r';
       int count=0;
       int n = str.length();
@@ -162,5 +163,35 @@ public class class6 {
       System.out.println("Frequency of "+ target +" is "+ count);
    }
 
+   public static void VowelsCheck()
+   {
+    String str = "racecarjhdgahaha";
+    int n = str.length();
+    int count = 0;
+    
+    for(int i =0; i<n; i++)
+    {
+        char c = str.charAt(i);
+        if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u')
+        {
+            count++;
+        }
+    }
+    System.out.println(count);
+   }
+
+   public static void RemoveDuplicate() {
+    String str = "hello";
+    String result = "";
+
+    for (int i = 0; i < str.length(); i++) {
+        char c = str.charAt(i);
+        if (result.indexOf(c) == -1) {
+            result += c;
+        }
+    }
+
+    System.out.println("String after removing duplicates: " + result);
+}
 
 }
