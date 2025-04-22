@@ -16,7 +16,7 @@ public class class1 {
 //        // byte c = a+b; // by default + operator always give the integer value
 //       byte  c = (byte) (a+b);
 //        System.out.println(c);
-//        System.out.println(10+10+"hello");
+       System.out.println(10+10+"hello");
 //        System.out.println(5<6);
 //        System.out.println(a & b);
 //
@@ -30,7 +30,7 @@ public class class1 {
 //            System.out.println("Hii");
 //        }
 
-        System.out.println(5<6?"hello":"Hii");
+        // System.out.println(5<6?"hello":"Hii");
 
 
     }

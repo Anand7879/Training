@@ -6,7 +6,8 @@ public class practicesQuestion {
     public static void main(String[] args) {
         
      //calculator();
-     int_To_Float();
+    //  int_To_Float();
+    SwapTwoNumbers();
     }
 
     // Q.1 Calculator
@@ -45,4 +46,32 @@ public class practicesQuestion {
         float b = (float) a;
         System.out.print(b);
     }
+
+   public static void SwapTwoNumbers()
+   {
+    //  Using a third variable
+    int a = 10;
+    int b = 20;
+    int temp = 0;
+
+    temp=a;
+    a=b;
+    b= temp;
+    System.out.println("After Swapping a = "+a);
+    System.out.println("After Swapping b = "+b);
+
+    // Using a third Variable
+    int c = 9;
+    int d = 10;
+
+    c=c+d;   //19
+    d=c-d;   //9
+    c = c-d; //10
+
+    System.out.println("After Swapping c = "+c);
+    System.out.println("After Swapping d = "+d);
+
+
+
+   }
 }
