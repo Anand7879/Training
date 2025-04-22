@@ -5,10 +5,29 @@ public class class6 {
 //        countElements();
 //convert1DArray();
     // matrix_multiplication();
+    SamestringCount();
+    palindromeCheckar("racecar");
+    frequencyCheck();
 
-    String str = "Hello";
-    System.out.println(str.length());
-    System.out.println(str.charAt(1));
+    // String str = "Hello";
+    // System.out.println(str.length());
+    // System.out.println(str.charAt(1));
+
+    // System.out.println("All character :");
+    // for(int i = 0; i<str.length(); i++)
+    // {
+    //     System.out.println(str.charAt(i));
+
+    // }
+
+    // System.out.println("Reverse string: ");
+    // {
+    //     for(int i = str.length()-1; i>=0; i--)
+    //     {
+    //         System.out.println(str.charAt(i));
+    //     }
+    // }
+
 
     }
 
@@ -89,6 +108,59 @@ public class class6 {
         }
     }
 
-    
+   public static void palindromeCheckar(String str)
+   {
+       int l = 0, h = str.length()-1;
+        boolean palindrome = true;
+       while(l<h)
+       {
+          if(str.charAt(h)!=str.charAt(l))
+          {
+            palindrome = false;
+            break;
+          }
+          l++;
+          h--;
+       }
+       if(palindrome)
+       System.out.println("String Is Palindrome");
+       else
+       System.out.println("String Is not Palindrome");
+   } 
+
+   public static void SamestringCount()
+   {
+          String str = "Hello";
+          String str2 = "Hiiii";
+          int count = 0;
+          int h = str.length();
+
+          for(int i =0; i<h;i++)
+          {
+              if(str.charAt(i)==str2.charAt(i))
+              {
+                 count++;
+
+              }
+          }
+          System.out.println(count);
+   }
+
+   public static void frequencyCheck()
+   {
+      String str ="rececar";
+      char target = 'r';
+      int count=0;
+      int n = str.length();
+      for(int i = 0; i<n; i++)
+      {
+           if(str.charAt(i)==target)
+           {
+               count++;
+           }
+      }
+      System.out.println("Frequency of "+ target +" is "+ count);
+   }
+
 
 }
