@@ -17,7 +17,28 @@ public class Class10Practice {
         // Q25();
         // Q24();
         // Q23();
-        Q21();
+        // Q21();
+        // Q20();
+        // Q19();
+        // Q18();
+        // Q17();
+        // Q16();
+        // Q15();
+        // Q14();
+        // Q13();
+        // Q12();
+        // Q11();
+        // Q10();
+        // Q9();
+        // Q8();
+        // Q7();
+        // Q6();
+        // Q5();
+        // Q4();
+        // Q3();
+        // Q2();
+        // Q1();
+
 
     }
 
@@ -345,9 +366,406 @@ public class Class10Practice {
            System.out.print(n+" Is Not An ArmStrong Number");
 
     }
+    
+    //WAP to print all the perfect number between two given range
+    public static void Q20(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Range: ");
+        int n  = sc.nextInt();
+
+        for(int j=1; j<=n; j++)
+        {
+        int sum=0;
+        for(int i = 1; i<=j/2; i++)
+        {
+              if(j%i==0)
+              {
+               sum+=i;
+              }
+        }
+        if(j==sum)
+        System.out.print(j+" ");
+    }
+
+
+    }
+
+    //WAP to print all perfect numbers between 1 to 100
+    public static void Q19(){
+       
+        for(int j=1; j<=100; j++)
+        {
+        int sum=0;
+        for(int i = 1; i<=j/2; i++)
+        {
+              if(j%i==0)
+              {
+               sum+=i;
+              }
+        }
+        if(j==sum)
+        System.out.print(j+" ");
+    }
+
+
+    }
+
+    //WAP to check a number is perfect or not
+    public static void Q18(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number: ");
+        int n  = sc.nextInt();
+        int sum=0;
+        for(int i = 1; i<=n/2; i++)
+        {
+              if(n%i==0)
+              {
+               sum+=i;
+              }
+        }
+        if(n==sum)
+        System.out.println(n + " Is a Perfect Number");
+        else
+        System.out.println(n + " Is Not a Perfect Number!");
 
 
 
+    }
+
+    //WAP to print alternate prime numbers between 1 to 100
+    public static void Q17()
+    {
+        int count = 0; 
+        for(int j = 2; j<=100; j++)
+        {
+            boolean prime = true;
+       for(int i= 2; i<=Math.sqrt(j); i++)
+       {
+             if(j%i==0)
+             {
+               prime = false;
+               break;
+             }
+       }
+       if(prime)
+       {
+        if (count % 2 == 0) { 
+            System.out.print(j + " ");
+        }
+        count++;
+
+       }
+    
+    }
+
+    }
+   
+    //WAP to print all prime numbers between two given range
+    public static void Q16()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Range: ");
+        int n  = sc.nextInt();
+       
+        for(int j = 1; j<=n; j++)
+        {
+            if (j == 1) continue;  // Skip 1 as it's not a prime
+            boolean prime = true;
+       for(int i= 2; i<=Math.sqrt(j); i++)
+       {
+             if(j%i==0)
+             {
+               prime = false;
+               break;
+             }
+       }
+       if(prime)
+       {
+           System.out.print(j +" ");
+       }
+    
+    }
+
+    }
+   
+    //WAP to print all prime numbers between 1 to 100
+    public static void Q15()
+    {
+        for(int j = 1; j<=100; j++)
+        {
+            if (j == 1) continue;  // Skip 1 as it's not a prime
+            boolean prime = true;
+       for(int i= 2; i<=Math.sqrt(j); i++)
+       {
+             if(j%i==0)
+             {
+               prime = false;
+               break;
+             }
+       }
+       if(prime)
+       {
+           System.out.print(j +" ");
+       }
+    
+    }
+
+    }
+   
+    //WAP to check a number is prime or not
+    public static void Q14()
+     {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number: ");
+        int n  = sc.nextInt();
+        boolean prime = true;
+        for(int i = 2; i<=Math.sqrt(n); i++)
+        {
+              if(n%i==0)
+              {
+                prime = false;
+                break;
+              }
+        }
+        if(prime)
+        {
+            System.out.println("Number Is Prime");
+        }
+        else
+        System.out.println("Number Is Not Prime");
+
+
+     }
+    
+    //WAP to count all the factors of a given number and display it
+    public static void Q13()
+     {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number: ");
+        int n  = sc.nextInt();
+        int count=0;
+        for(int i = 1; i<=Math.sqrt(n); i++)
+        {
+              if(n%i==0)
+              {
+                count+=2;
+              }
+        }
+        System.out.println("Count Of All Factors Is: "+count);
+     }
+
+    //WAP to find sum of all factors of a given number
+    public static void Q12()
+     {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number: ");
+        int n  = sc.nextInt();
+        int sum = 0;
+        for(int i = 1; i<=Math.sqrt(n); i++)
+        {
+              if(n%i==0)
+              {
+                 sum+=(n/i)+i;
+              }
+        }
+        System.out.println("Sum Of ALL Factors Of "+ n+ " are "+ sum);
+     }
+
+    //WAP to find all factors of a given number
+     public static void Q11()
+     {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number: ");
+        int n  = sc.nextInt();
+
+        for(int i = 1; i<=Math.sqrt(n); i++)
+        {
+              if(n%i==0)
+              {
+                System.out.print(i+" "+n/i+" ");
+              }
+        }
+     }
+
+    //WAP to check a number is palindrome or not
+    public static void Q10(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number: ");
+        int n  = sc.nextInt();
+        int count =  0;
+        int temp = n;
+        while(temp>0)
+        {
+            temp/=10;
+            count++;
+        }
+        int reverse=0;
+        temp = n;
+        while (temp>0) {
+            reverse+= temp%10 * Math.pow(10,count-1);
+            temp/=10;
+            count--;
+        }
+        if(n==reverse)
+        {
+            System.out.println(n + " Is A Palindrom ");
+        }
+        
+    }
+
+    //WAP to print reverse of a given number
+    public static void Q9()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number: ");
+        int n  = sc.nextInt();
+        int count =  0;
+        int temp = n;
+        while(temp>0)
+        {
+            temp/=10;
+            count++;
+        }
+        int reverse=0;
+        temp = n;
+        while (temp>0) {
+            reverse+= temp%10 * Math.pow(10,count-1);
+            temp/=10;
+            count--;
+        }
+        System.out.println(reverse);
+    }
+
+    //WAP to find the count of all digits in a given number
+    public static void Q8(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter A  Number: ");
+        int n  = sc.nextInt();
+        String str = String.valueOf(n);
+
+        for(int i = 0; i<str.length(); i++)
+        {
+            int count = 1;
+            for(int j=i+1; j<str.length(); j++)
+            {
+                if(str.charAt(i)==str.charAt(j))
+                {
+                    count++;
+                }
+            }
+            System.out.println("Count OF Digit "+ str.charAt(i) + " Is : "+ count);
+        }
+
+
+
+        
+    }    
+
+    //WAP to find sum of all digits in a given number
+    public static void Q7(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter A  Number: ");
+        int n  = sc.nextInt();
+        int temp = n;
+        int sum = 0;
+        while (temp>0) {
+            sum+=temp%10;
+            temp/=10;
+        }
+        System.out.println("Sum Is: "+ sum);
+    }    
+
+    //WAP to extract and display all digits from a given number
+    public static void Q6(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter A  Number: ");
+        int n  = sc.nextInt();
+        int temp = n;
+        int count=0;
+        while(temp>0)
+        {
+          temp/=10;
+          count++;
+        }
+        temp = n;
+        while(temp>0)
+        {
+            int digit = (int) (temp/Math.pow(10, count-1));
+            System.out.println(digit);
+            temp = (int) (temp % Math.pow(10, count-1));
+            count--;
+        }
+    }
+
+    //WAP to find product of 'n' natural numbers
+    public static void Q5(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number: ");
+        int n  = sc.nextInt();
+        int product=1;
+        for(int i = 1; i<=n; i++)
+        {
+           product *=i;
+        }
+
+       System.out.println("Product Of "+n+ " Natural Number Is: "+ product);
+    } 
+
+    //WAP to find sum of 'n' natural numbers
+    public static void Q4(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number: ");
+        int n  = sc.nextInt();
+        int sum=0;
+        for(int i = 1; i<=n; i++)
+        {
+           sum += i;
+        }
+
+       System.out.println("Sum Of "+n+ " Natural Number Is: "+ sum);
+    }
+
+    //WAP to print 'n' natural numbers in reverse order
+    public static void Q3()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number: ");
+        int n  = sc.nextInt();
+        for(int i = n; i>=1; i--)
+        {
+            System.out.println(i);
+        }
+    }
+
+    //WAP to print all even numbers between two given range
+    public static void Q2(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Starting Range: ");
+        int n  = sc.nextInt();
+        System.out.print("Enter Ending Range: ");
+        int m  = sc.nextInt();
+
+        for(int i = n; i<=m; i++)
+        {
+            if(i%2==0)
+            {
+                System.out.println(i);
+            }
+        }
+
+
+    }
+
+   //WAP to print natural numbers up-to 'n'
+   public static void Q1() {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter Number: ");
+    int n  = sc.nextInt();
+    for(int i = 1; i<=n; i++)
+    {
+        System.out.println(i);
+    }
+   }
 }
     
 
