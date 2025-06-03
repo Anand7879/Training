@@ -3,16 +3,29 @@ package class24;
 //Multithreading 
 
 class MyThread extends Thread {
-  public void run(){
-    System.out.println("Hello");
+  // public void run(){
+  //   System.out.println("Hello");
     
-    try {
-        Thread.sleep(3000);
+  //   try {
+  //       Thread.sleep(3000);
+  //   } catch (Exception e) {
+    
+  //   }
+
+  //   System.out.println("Hiiii");
+  // }
+
+  public void run(){
+
+    for(int i = 1; i<=5; i++)
+    {
+      System.out.println(i);
+          try {
+        Thread.sleep(i*1000);
     } catch (Exception e) {
     
     }
-
-    System.out.println("Hiiii");
+    }
   }
     
 }
@@ -70,11 +83,13 @@ public class class24 {
         // downloadFile.file("File B");
 
         
-          thread t1 = new thread("File A");
-          thread t2 = new thread("File B");
+          // thread t1 = new thread("File A");
+          // thread t2 = new thread("File B");
 
-          t1.start();
-          t2.start();
+          // t1.start();
+          // t2.start();
        
+           MyThread T1 = new MyThread();
+        T1.start();
     }
 }
