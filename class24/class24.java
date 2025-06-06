@@ -83,11 +83,11 @@ public class class24 {
         // downloadFile.file("File B");
 
         
-          // thread t1 = new thread("File A");
-          // thread t2 = new thread("File B");
+        //   thread t1 = new thread("File A");
+        //   thread t2 = new thread("File B");
 
-          // t1.start();
-          // t2.start();
+        //   t1.start();
+        //   t2.start();
        
            MyThread T1 = new MyThread();
         T1.start();

@@ -32,21 +32,52 @@ class MyThread implements Runnable{
       }
 }
 
+class Hello extends Thread{
+   static int Totalbalance = 1000;
+        int balance;
+
+     public Hello(int balance){
+         this.balance = balance;
+     }
+     
+     public void run(){
+         
+         synchronized(Hello.class){
+
+            if(Totalbalance >= balance){
+
+                System.out.println(Thread.currentThread().getName());
+                System.out.println(balance + " Successfully Withdrow");
+       
+                Totalbalance-=balance;
+       
+                System.out.println("Remaining Balance = "+ Totalbalance); 
+       
+            }else{
+                System.out.println("Insufficient Balance");
+            }
+       
+         }
+
+        }
+
+
+}
 
 public class class25 {
     public static void main(String[] args) {
-        MyRunnable obj = new MyRunnable();
-        Thread T1 = new Thread(obj);
-        T1.start();
+        // MyRunnable obj = new MyRunnable();
+        // Thread T1 = new Thread(obj);
+        // T1.start();
 
-        try {
-            T1.join();
-        } catch (Exception e) {
+        // try {
+        //     T1.join();
+        // } catch (Exception e) {
     
-            e.printStackTrace();
-        }
+        //     e.printStackTrace();
+        // }
         
-        System.out.println("Main Thread Is Running");
+        // System.out.println("Main Thread Is Running");
 
         // MyThread obj = new MyThread("File A");
         // Thread T1 = new Thread(obj);
@@ -54,6 +85,15 @@ public class class25 {
         //  MyThread obj1 = new MyThread("File B");
         // Thread T2 = new Thread(obj1);
         // T2.start();
+
+        
+         Hello t1 = new Hello(800);
+         Hello t2 = new Hello(200);
+
+         t1.start();
+         t2.start();
+
+          
     }
     
 }
