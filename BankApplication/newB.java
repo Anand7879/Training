@@ -1,11 +1,10 @@
 package BankApplication;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.*;
 
 // Transaction class
-class Transaction {
+class Transaction implements Serializable {
     String type;
     double amount;
     Date timestamp;
@@ -22,7 +21,7 @@ class Transaction {
 }
 
 // Loan class
-class Loan {
+class Loan implements Serializable {
     String type;
     double principal;
     double interestRate;
@@ -51,7 +50,7 @@ class Loan {
 }
 
 // Account class
-class Account {
+class Account implements Serializable {
     private String name;
     private int accountNumber;
     private double balance;
@@ -67,31 +66,6 @@ class Account {
         this.transactions = new ArrayList<>();
         this.loans = new ArrayList<>();
     }
-
-     public void saveData(){
-
-        File BankFile = new File("BankFile.txt");
-
-        if(BankFile.exists())
-        {
-            try {
-                FileWriter writeFile = new FileWriter("BankFile.txt"); 
-                writeFile.write(name);
-                writeFile.write(accountNumber);
-                writeFile.write(pin);
-                // writeFile.write(balance);
-                // writeFile.write(loans);
-                // writeFile.write(transactions);
-
-                writeFile.close();
-                
-
-            } catch (Exception e) {
-
-            }
-
-        }
-     }
 
     public int getAccountNumber() {
         return accountNumber;
@@ -225,7 +199,7 @@ class Account {
 }
 
 // Bank class
-class Bank {
+class Bank implements Serializable {
     private double totalFunds;
     private Map<Integer, Account> accounts;
 
@@ -253,15 +227,20 @@ class Bank {
         }
         return null;
     }
+
+    public Map<Integer, Account> getAccounts() {
+        return accounts;
+    }
 }
 
 // Main class
-public class BankApplication {
+public class newB {
+    static final String FILE_NAME = "bankdata.dat";
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Bank bank = loadBank();
         Random rand = new Random();
-        Bank bank = new Bank(1000000); // Initial bank funds
-
         boolean running = true;
 
         while (running) {
@@ -290,6 +269,7 @@ public class BankApplication {
                     Account newAcc = new Account(name, accNum, pin);
                     bank.addAccount(newAcc);
                     System.out.println("Account created! Your account number is: " + accNum);
+                    saveBank(bank);
                     break;
 
                 case 2:
@@ -301,6 +281,7 @@ public class BankApplication {
                     if (acc != null) {
                         System.out.println("Login successful. Welcome, " + acc.getName() + "!");
                         runAccountMenu(sc, acc, bank);
+                        saveBank(bank);
                     } else {
                         System.out.println("Invalid credentials.");
                     }
@@ -309,6 +290,7 @@ public class BankApplication {
                 case 3:
                     System.out.println("Thank you for using the bank. Goodbye!");
                     running = false;
+                    saveBank(bank);
                     break;
 
                 default:
@@ -388,5 +370,21 @@ public class BankApplication {
                     System.out.println("Invalid choice.");
             }
         } while (choice != 8);
+    }
+
+    public static void saveBank(Bank bank) {
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
+            out.writeObject(bank);
+        } catch (IOException e) {
+            System.out.println("Error saving bank data: " + e.getMessage());
+        }
+    }
+
+    public static Bank loadBank() {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
+            return (Bank) in.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            return new Bank(1000000);
+        }
     }
 }
