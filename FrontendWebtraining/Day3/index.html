@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="index.css"> -->
 
     <!-- Internal css -->
     <style>
@@ -15,9 +15,39 @@
             background-color: springgreen;
         } */
 
-        h2{
+        /* h2{
             background-color: red;
-        }
+        } */
+         .one{
+            background-color: rebeccapurple;
+         }
+
+         #two{
+            background-color: blue;
+         }
+
+         a[href = "http://google.com"]
+         {
+            background-color: red;
+         }
+
+         /* Starting Selector */
+          a[href^= "https"]
+         {
+            background-color: red;
+         }
+
+         /* Ending Selector */
+           a[href$= ".in"]
+         {
+            background-color: rgb(108, 224, 7);
+         }
+
+         /* Anywhere In The Line Selector */
+          a[href*= "kart"]
+         {
+            background-color: rgb(6, 154, 119);
+         }
     </style>
 </head>
 <body>
@@ -57,11 +87,17 @@
   </blockquote> -->
 
   <!-- Inline CSS --> 
- <h1 style="background-color: gray;">Hello</h1>
+ <!-- <h1 style="background-color: gray;">Hello</h1>
 
 
   <h2>Hii</h2>
-  <h3>Byeee</h3>
+  <h3>Byeee</h3> -->
+
+<h4 class="one" id="two"> Selectors</h4>
+
+<a href="http://google.com">Google</a>    <!--Attribute Selector-->
+<a href="https://flipkart.in">Flipcart</a>
+
 
 </body>
 </html>
