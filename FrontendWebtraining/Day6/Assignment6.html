@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+
+        }
+        .wrapper{
+            height: 400px;
+            width: 300px;
+            /* border: 2px solid red; */
+            position: relative;
+
+        }
+        
+        .childA{
+            height: 50%;
+            width: 100%;
+            background-color: green;
+            position: absolute;
+            z-index: 2;
+        }
+
+        .childB{
+            height: 50%;
+            width: 100%;
+            background-color: brown;
+            z-index: 3;
+        }
+
+    </style>
+</head>
+<body>
+          <section class="wrapper">
+               
+            <div class="childA">
+
+            </div>
+                 a
+            <div class="childB">
+                b
+            </div>
+          </section>
+            
+</body>
+</html>

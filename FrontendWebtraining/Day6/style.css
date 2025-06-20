@@ -1,0 +1,50 @@
+#parrent{
+    height: 400px;
+    width: 500px;
+    border: 2px solid red;
+}
+
+.one{
+    height: 80px;
+    width: 80px;
+    transition: 3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#parrent:hover .one{
+    border-radius: 80%;
+    margin-left:  84%;
+    transform: rotate(180deg);
+    /* transform: scale(8); */
+    transform: translate(10);
+}
+
+#one{
+    height: 80px;
+    width: 80px;
+    background-color: red;
+    /* transition-timing-function: ease-in; */
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#two{
+    height: 80px;
+    width: 80px;
+    background-color: greenyellow;
+    transition-timing-function: ease-out;
+}#three{
+    height: 80px;
+    width: 80px;
+    background-color: blue;
+    transition-timing-function: ease;
+}#four{
+    height: 80px;
+    width: 80px;
+    background-color: black;
+    transition-timing-function: ease-in-out;
+}
+
+
+
